@@ -40,6 +40,7 @@ package org.springframework.asm;
 public abstract class AnnotationVisitor {
 
     /**
+     * 此访问者实现的 ASM API 版本。
      * The ASM API version implemented by this visitor. The value of this field
      * must be one of {@link Opcodes#ASM4}, {@link Opcodes#ASM5} or {@link Opcodes#ASM6}.
      */

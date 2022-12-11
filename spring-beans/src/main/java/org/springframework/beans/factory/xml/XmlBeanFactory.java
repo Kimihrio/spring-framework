@@ -64,10 +64,13 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	 * @throws BeansException in case of loading or parsing errors
 	 */
 	public XmlBeanFactory(Resource resource) throws BeansException {
+		//调用下方构造方法
 		this(resource, null);
 	}
 
 	/**
+	 * parentBeanFactory为父类BeanFactory用于Factory合并，所有此处可以为空
+	 *
 	 * Create a new XmlBeanFactory with the given input stream,
 	 * which must be parsable using DOM.
 	 * @param resource XML resource to load bean definitions from
@@ -75,7 +78,10 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	 * @throws BeansException in case of loading or parsing errors
 	 */
 	public XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) throws BeansException {
+
 		super(parentBeanFactory);
+
+		//资源加载的真正实现
 		this.reader.loadBeanDefinitions(resource);
 	}
 

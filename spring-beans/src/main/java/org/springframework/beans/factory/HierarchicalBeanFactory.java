@@ -19,6 +19,8 @@ package org.springframework.beans.factory;
 import org.springframework.lang.Nullable;
 
 /**
+ * 在 BeanFactory 定义的功能的基础上增加了对 parentFactory 的支持
+ *
  * Sub-interface implemented by bean factories that can be part
  * of a hierarchy.
  *
@@ -40,6 +42,9 @@ public interface HierarchicalBeanFactory extends BeanFactory {
 	BeanFactory getParentBeanFactory();
 
 	/**
+	 * 返回本地 bean 工厂是否包含给定名称的 bean，忽略祖先上下文中定义的 bean。
+	 * 这是containsBean的替代方法，忽略来自祖先 bean 工厂的给定名称的 bean。
+	 *
 	 * Return whether the local bean factory contains a bean of the given name,
 	 * ignoring beans defined in ancestor contexts.
 	 * <p>This is an alternative to {@code containsBean}, ignoring a bean
