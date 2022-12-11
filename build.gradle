@@ -1,12 +1,7 @@
 buildscript {
 	repositories {
-		mavenCentral()
-		maven { url "https://repo.spring.io/plugins-release" }
-		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-		maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-		maven {url 'https://maven.aliyun.com/nexus/content/groups/public/'}
-		maven {url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'}
 		gradlePluginPortal()
+		maven { url "https://maven.aliyun.com/nexus/content/repositories/spring-plugin" }
 	}
 	dependencies {
 		classpath("io.spring.gradle:propdeps-plugin:0.0.9.RELEASE")
@@ -159,6 +154,8 @@ configure(allprojects) { project ->
 	}
 
 	repositories {
+		maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+		maven { url "https://maven.aliyun.com/repository/public" }
 		mavenCentral()
 		maven { url "https://repo.spring.io/libs-spring-framework-build" }
 	}
